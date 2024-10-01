@@ -1,0 +1,211 @@
+:root{
+    --Interface-font: 'Inknut Antiqua', sans-serif;
+    --icon-font:'Inter';
+    --font-size-H2:2.22vw/*32px*/;
+    --font-size-H3: 1.67vw/*24px*/;
+    --font-size-H4: 2.78vw /*40px*/;
+    --font-size-paragraph-description: 1.11vw /*16px*/;
+    --font-weight-bold: 700;
+    --font-weight-normal: 400;
+    --font-weight-light: 300;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+    overflow:hidden
+}
+body{
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:2.73vh;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.22vw;
+}
+
+.canvas{
+    display: flex;
+    background-color: #D4D4D4;
+    width:74.31vw;
+    height: 62.99vh;
+    box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+}
+
+.toolbar{
+    width:74.31vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:4.17vw;
+    
+}
+
+.add-text{
+    
+    border-radius: 23px;
+    display: flex;
+    width: 14.72vw;
+    height: 5.47vh;
+    padding: 0 1.74vw;
+    justify-content: center;
+    align-items: center;
+    gap: 0.56vw;
+    background: #C9C9C9;
+    font-family: var(--Interface-font);
+    font-size:var(--font-size-H3);
+    font-weight: var(--font-weight-light);
+    font-style: normal;
+    line-height: normal;
+    color: #4D4D4D;
+    transition: ease-in-out;
+
+    &:hover{
+        background: #9E9E9E;
+        cursor: pointer;
+    }
+
+}
+
+.T{
+    font-family: var(--Interface-font);
+    font-size: var(--font-size-H4);
+    font-weight: var(--font-weight-light);
+    font-style: normal;
+    line-height: normal;
+    color: #666;
+}
+
+.font{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:1.94vw;
+}
+
+.font-family{
+    border-radius: 23px;
+    display: flex;
+    width: 17.64vw;
+    height: 5.47vh;
+    padding-left: 1.81vw; 
+    align-items: center;
+    gap: 0.56vw;
+    background: #C9C9C9;
+    border-radius: 23px;
+    border:none;
+    outline: none;
+}
+.font-size{
+    height: 5.47vh;
+    display: inline-flex;
+    padding: 0 1.04vw 0 1.32vw;
+    justify-content: center;
+    align-items: center;
+    gap: 1.81vw;
+    border-radius: 23px;
+    background: #C9C9C9;
+    cursor: default;
+}
+
+.bold{
+    color: #9A9A9A;
+    font-family: Inter;
+    font-size: var(--font-size-H4);
+    font-style: normal;
+    font-weight: var(--font-weight-light);
+    line-height: normal;
+    cursor: default;
+}
+.bold.active{
+    color:black;
+}
+
+
+.italic{
+    color: #9A9A9A;
+    font-family: Inter;
+    font-size:var(--font-size-H4);
+    font-style: italic;
+    font-weight:var(--font-weight-normal);
+    line-height: normal;
+    cursor: default;
+}
+.italic.active{
+    color:black;
+}
+
+
+.underline{
+    color: #9A9A9A;
+    font-family: Inter;
+    font-size: var(--font-size-H4);
+    font-style: normal;
+    font-weight:var(--font-weight-normal);
+    line-height: normal;
+    text-decoration-line: underline;
+    cursor: default;
+}
+.underline.active{
+    color:black;
+}
+
+
+.alignment{
+    display: flex;
+    width:fit-content;
+    height:fit-content;
+    padding: 1.04vw 1.04vw 1.56vh 1.56vh;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    cursor: default;
+    
+    &:active{
+        background: #C9C9C9;
+    }
+}
+
+.decoration{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:1.39vw;
+}
+
+.icn{
+    filter: invert(81%) sepia(0%) saturate(578%) hue-rotate(146deg) brightness(78%) contrast(80%);
+}
+
+.size{
+    color: #000;
+    font-family: "Sans Serif Collection";
+    font-size:var(--font-size-H3);
+    font-style: normal;
+    font-weight:var(--font-weight-normal);
+    line-height: normal;
+}

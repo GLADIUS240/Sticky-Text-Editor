@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Text Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main div which contains all the elements -->
+    <div class="main">
+    
+    <!-- Div for Undo Redo Elements     -->
+    <div class="navbar">
+        <div class="btn"><img src="clarity_undo-line.svg"/></div>
+        <div class="btn"><img src="clarity_undo-line-1.svg"/></div>
+    </div>    
+
+    <!-- Main Canvas div for adding and styling text -->
+    <div class="canvas"></div> 
+
+
+    <!-- Font styling elements conatainer -->
+    <div class="toolbar">
+
+        <!-- Modification elements -->
+        <div class="alter">
+            <div class="font">
+                <select class="font-family" >
+                    <option value="arial" selected>Arial</option>
+                    <option value="times_new_roman">Times New Roman</option>
+                    <option value="helvetica">Helvetica</option>
+                    <option value="courier">Courier</option>
+                    <option value="verdana">Verdana</option>
+                </select>
+                <div class="font-size size">
+                    <div class="size">-</div>
+                    24
+                    <div class="size">+</div>
+                </div>    
+            </div>
+            <div class="decoration">
+                <div class="bold">B</div>
+                <div class="italic">I</div>
+                <div class="underline">U</div>
+                <div class="alignment"><img class="icn icon" src="Left.svg"/></div>
+            </div>
+        </div>
+
+        <!-- Add text button -->
+        <div class="add-text">
+         <h6 class="T">T</h6>Add Text
+        </div>
+
+    </div>
+    </div>
+    <script src="script.js" ></script>
+</body>
+</html>

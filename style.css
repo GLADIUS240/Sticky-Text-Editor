@@ -79,7 +79,7 @@ body{
     font-family: var(--Interface-font);
     font-size:var(--font-size-H3);
     font-weight: var(--font-weight-light);
-    font-style: normal;
+    font-style:normal;
     line-height: normal;
     color: #4D4D4D;
     transition: ease-in-out;
@@ -136,7 +136,7 @@ body{
     color: #9A9A9A;
     font-family: Inter;
     font-size: var(--font-size-H4);
-    font-style: normal;
+    font-style:normal;
     font-weight: var(--font-weight-light);
     line-height: normal;
     cursor: default;

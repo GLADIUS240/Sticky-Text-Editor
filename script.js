@@ -8,12 +8,17 @@ const bold=document.getElementById('bold');
 const italic=document.getElementById('italic');
 const underline=document.getElementById('underline');
 const alignment=document.getElementById('alignment');
+const icn=document.getElementById('icn');
 
-// Add text box creation with drag functionality
+const align=['Left','Center','Right'];
+let i=0;
+
+
 addText.addEventListener('click', () => {
     const textBox = document.createElement('textarea');
-    
-    // Styling for the new text box
+
+    //'Jetbrains Mono','Courier New',Lombok,'Brush Script MT',Arial
+   
     textBox.style.cssText = `
         position: absolute;
         background-color: #D4D4D4;
@@ -21,27 +26,29 @@ addText.addEventListener('click', () => {
         height: auto;
         line-height:normal;
         padding: 1px;
+        font-family:'Arial';
         font-size: 24px;
         overflow: hidden;
         resize: none;
         cursor: crosshair;
+        text-align:${alignMent()};
         top: 0;
         left: 0;
     `;
     textBox.placeholder = 'Enter your text';
     
-    // Auto-resize based on input
+    
     textBox.addEventListener('input', function() {
-        textBox.style.height = 'auto'; // Reset the height
-        textBox.style.height = (textBox.scrollHeight) + 'px'; // Adjust height
+        textBox.style.height = 'auto'; 
+        textBox.style.height = (textBox.scrollHeight) + 'px'; 
     });
 
     canvas.appendChild(textBox);
 
-    // Variables for drag movement
+    
     let initX = 0, initY = 0, finalX = 0, finalY = 0;
 
-    // Drag start
+    
     textBox.addEventListener('mousedown', (e) => {
         initX = e.clientX;
         initY = e.clientY;
@@ -52,9 +59,9 @@ addText.addEventListener('click', () => {
 
     textBox.addEventListener('focus', () => {
         decrement.addEventListener('click', () => {
-            // Get current font size, convert to integer, then decrement
+            
             let currentFontSize = parseInt(fontSize.innerText);;
-            if (currentFontSize > 1) { // Ensure the font size doesn't go below 1
+            if (currentFontSize > 1) { 
                 textBox.style.fontSize = (currentFontSize - 1) + 'px';
                 fontSize.innerText=currentFontSize-1;
             }
@@ -62,7 +69,7 @@ addText.addEventListener('click', () => {
 
         increment.addEventListener('click',()=>{
             let currentFontSize = parseInt(fontSize.innerText);;
-            if (currentFontSize > 1) { // Ensure the font size doesn't go below 1
+            if (currentFontSize > 1) { 
                 textBox.style.fontSize = (currentFontSize + 1) + 'px';
                 fontSize.innerText=currentFontSize+1;
             }
@@ -97,8 +104,12 @@ addText.addEventListener('click', () => {
                 textBox.style.textDecorationLine='none';
             }
         });
+
+        textBox.style.alignment=alignment.addEventListener('click', alignMent);
+        
+        
     });
-    // Drag move
+    
     function mouseMove(e) {
         const rect = canvas.getBoundingClientRect();
 
@@ -107,11 +118,9 @@ addText.addEventListener('click', () => {
         initX = e.clientX;
         initY = e.clientY;
 
-        // Calculate new positions
         let newTop = textBox.offsetTop - finalY;
         let newLeft = textBox.offsetLeft - finalX;
 
-        // Ensure the text box stays within the canvas boundaries
         if (newTop < 0) newTop = 0;
         if (newLeft < 0) newLeft = 0;
         if (newTop + textBox.offsetHeight > rect.height) newTop = rect.height - textBox.offsetHeight;
@@ -121,9 +130,25 @@ addText.addEventListener('click', () => {
         textBox.style.left = newLeft + 'px';
     }
 
-    // Drag end
+    
     function mouseUp() {
         document.removeEventListener('mousemove', mouseMove);
         document.removeEventListener('mouseup', mouseUp);
     }
 });
+
+
+font.addEventListener('change', ()=>{
+    textBox.style.fontFamily = selectedValue;
+});
+
+function alignMent() {
+    align.forEach((alignment, index) => {
+        if (index === i) { 
+            icn.src = alignment + '.svg';
+        }
+    });
+    i = (i + 1) % align.length; 
+
+
+}

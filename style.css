@@ -42,7 +42,7 @@ body{
 }
 
 .canvas{
-    display: flex;
+    position:relative;
     background-color: #D4D4D4;
     width:74.31vw;
     height: 62.99vh;
